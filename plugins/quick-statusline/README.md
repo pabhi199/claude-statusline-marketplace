@@ -7,11 +7,9 @@ A Claude Code statusline showing: model name, working directory, git branch, ses
 From inside Claude Code:
 
 ```
-/plugin marketplace add /Users/abhishekpatel/Documents/Code/project-1/random-package/claude-statusline-marketplace
+/plugin marketplace add pabhi199/claude-statusline-marketplace
 /plugin install quick-statusline@abhishek-statusline-marketplace
 ```
-
-(Or point `marketplace add` at a git remote if you push this folder to GitHub.)
 
 ## Activate
 
