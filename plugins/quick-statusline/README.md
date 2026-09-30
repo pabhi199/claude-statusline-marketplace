@@ -20,14 +20,20 @@ Claude Code plugins cannot wire up `statusLine` automatically — add this to yo
 {
   "statusLine": {
     "type": "command",
-    "command": "${CLAUDE_PLUGIN_ROOT}/bin/statusline.py"
+    "command": "~/.claude/plugins/marketplaces/abhishek-statusline-marketplace/plugins/quick-statusline/bin/statusline.py"
   }
 }
 ```
 
-If `${CLAUDE_PLUGIN_ROOT}` doesn't resolve in your settings file, run `/plugin list`
-to find the plugin's installed path and use the absolute path to
-`bin/statusline.py` instead.
+`${CLAUDE_PLUGIN_ROOT}` does **not** resolve here — that placeholder only expands
+inside hook commands, MCP/LSP server configs, monitor commands, and skill/agent
+content (confirmed against the Claude Code plugin manifest docs). The main
+`statusLine` setting isn't one of those, so plugins can never wire it up
+automatically, and referencing `${CLAUDE_PLUGIN_ROOT}` in it silently fails
+(no statusline shows, no error). Use the `~`-relative path above instead —
+`~` expands to your home directory on every OS, and the marketplace-checkout
+path stays stable across plugin version updates (unlike the versioned
+`plugins/cache/.../<version>/` path).
 
 Restart Claude Code (or start a new session) to see the statusline.
 
