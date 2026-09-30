@@ -1,0 +1,9 @@
+{
+  "name": "quick-statusline",
+  "displayName": "Quick Statusline",
+  "version": "1.0.0",
+  "description": "Statusline showing model, working directory, git branch, session cost and duration.",
+  "author": {
+    "name": "Abhishek Patel"
+  }
+}

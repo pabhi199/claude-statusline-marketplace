@@ -1,0 +1,13 @@
+{
+  "name": "abhishek-statusline-marketplace",
+  "owner": {
+    "name": "Abhishek Patel"
+  },
+  "plugins": [
+    {
+      "name": "quick-statusline",
+      "source": "./plugins/quick-statusline",
+      "description": "Statusline showing model, cwd, git branch, session cost and duration"
+    }
+  ]
+}
